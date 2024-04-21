@@ -1,0 +1,52 @@
+
+<div class="bottom-border">
+<nav class="navbar navbar-expand-lg navbar-light " style="background: linear-gradient(1200deg,#44ad6c, #2980b9)">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" id="title">CPlayer</a>
+      <button class="navbar-toggler " id="two" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon " ></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item" id="one" >
+            <a class="nav-link" aria-current="page" href="#" >
+              <button class="btn btn-outline" type="submit" id="searchButton">Home</button>
+            </a>
+          </li>
+          <li class="nav-item" id="one" >
+            <a class="nav-link" routerLink="/Playerlist">
+              <button class="btn btn-outline" type="submit" id="searchButton">Players</button>
+            </a>
+          </li>
+          <li class="nav-item" id="one">
+            <a class="nav-link"routerLink="/favourites">
+              <button class="btn btn-outline" type="submit" id="searchButton">Favorites</button>
+            </a>
+          </li>
+          <li class="nav-item" id="one">
+            <a class="nav-link" routerLink="/recommend">
+              <button class="btn btn-outline" type="submit" id="searchButton">Recommendations</button>
+            </a>
+
+          </li>
+        </ul>
+        <div class="d-flex">
+
+          <!-- <input class="form-control me-2" type="search" placeholder="Search player" [(ngModel)]="searchName"  aria-label="Search" required> -->
+         <button routerLink="/search" class="btn btn-outline" type="submit" id="searchButton" >Search</button>
+
+
+        </div>
+        <div class="login">
+            <a *ngIf="!loggedIn" routerLink="/login"><button class="btn btn-outline" type="submit" id="searchButton">Login</button></a>
+            <a *ngIf="loggedIn" routerLink="/UserProfile"><button class="btn btn-outline" type="submit" id="searchButton" style="margin-right:10px;">{{USERID}}</button></a>
+            <a *ngIf="loggedIn"><button class="btn btn-outline" type="submit" id="searchButton" (click)="logoutUser()">Logout</button></a>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+
+</div>
+

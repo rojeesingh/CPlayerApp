@@ -1,0 +1,154 @@
+       <!-- <div class="one">
+        <div class="center">
+            <h1>Register </h1>
+            <form method="post" class="register-form" [formGroup]="myGroup" (ngSubmit)="registerUser()" #registerForm="ngForm" >
+              <div class="txt_field">
+                <input type="text" required formControlName="firstName" [(ngModel)]="newUser.firstName">
+                <span></span>
+                <label>First Name</label>
+            </div>
+            <div class="txt_field">
+              <input type="text" required formControlName="userId" [(ngModel)]="newUser.lastName">
+              <span></span>
+              <label>Last Name</label>
+          </div>
+                <div class="txt_field">
+                    <input type="text" required formControlName="userId" [(ngModel)]="newUser.userId" >
+                    <span></span>
+                    <label>User Id</label>
+                </div>
+                <div class="txt_field">
+                  <input type="email" required formControlName="email" [(ngModel)]="newUser.email">
+                  <span></span>
+                  <label>Email</label>
+              </div>
+                <div class="txt_field">
+                    <input type="password" required formControlName="password" [(ngModel)]="newUser.password">
+                    <span></span>
+                    <label>Password</label>
+                </div>
+                <input type="submit" value="Sign up" [disabled]='registerForm.invalid'>
+                <div class="signup_link">
+                 Already a member?  <a routerLink="/login">Login</a>
+                </div>
+            </form>
+        </div>
+        </div>
+ -->
+
+
+        <!-- <section class="vh-100" style="background-color : #eee;"> -->
+          <section class="vh-100" style="background-image: url(assets/images/Background.jpg);">
+          <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                  <div class="card-body p-md-5">
+                    <div class="row justify-content-center">
+                      <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+        
+                        <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+        
+                        <!-- <form class="mx-1 mx-md-4"> -->
+                          <form class="mx-1 mx-md-4" method="post" class="register-form" (ngSubmit)="registerUser()" [formGroup]="form">
+                          <div class="d-flex flex-row align-items-center mb-4">
+                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                            <div class="form-outline flex-fill mb-0">
+                              <input type="text" id="form3Example1c" [(ngModel)]="newUser.firstName" [ngClass]="{ 'is-valid': FirstName?.valid }"  formControlName="FirstName"  class="form-control" />
+                              <label class="form-label" for="form3Example1c"> Your First Name</label>
+                              <div *ngIf="FirstName?.touched && FirstName?.invalid" class="alert alert-danger">
+                                <div *ngIf="FirstName?.errors?.['required']">Enter your first name.</div>
+                                <div *ngIf="FirstName?.errors?.['maxlength']">The first name can't exceed 20 characters.</div>
+                                <div *ngIf="FirstName?.errors?.['minlength']">The first name should be atleast 4 character.</div>
+                            </div>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-row align-items-center mb-4">
+                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                            <div class="form-outline flex-fill mb-0">
+                              <input type="text" id="form3Example1c" [(ngModel)]="newUser.lastName" [ngClass]="{ 'is-valid': LastName?.valid }" formControlName="LastName" class="form-control" />
+                              <label class="form-label" for="form3Example1c">Your Last Name</label>
+                              <div *ngIf="LastName?.touched && LastName?.invalid" class="alert alert-danger">
+                                <div *ngIf="LastName?.errors?.['required']">Enter your last name.</div>
+                                <div *ngIf="LastName?.errors?.['maxlength']">The last name can't exceed 20 characters.</div>
+                                <div *ngIf="LastName?.errors?.['minlength']">The last name should be atleast 4 character.</div>
+                            </div>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-row align-items-center mb-4">
+                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                            <div class="form-outline flex-fill mb-0">
+                              <input type="text" id="form3Example1c" [(ngModel)]="newUser.userId" [ngClass]="{ 'is-valid': userid?.valid }" formControlName="userid"  class="form-control" />
+                              <label class="form-label" for="form3Example1c">Set User Id</label>
+                              <div *ngIf="userid?.touched && userid?.invalid" class="alert alert-danger">
+                                <div *ngIf="userid?.errors?.['required']">Enter userid.</div>
+                                <div *ngIf="userid?.errors?.['maxlength']">The UserId can't exceed 20 characters.</div>
+                                <div *ngIf="userid?.errors?.['minlength']">The userId should be atleast 5 character.</div>
+                            </div>
+                            </div>
+                          </div>
+        
+                          <div class="d-flex flex-row align-items-center mb-4">
+                            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                            <div class="form-outline flex-fill mb-0">
+                              <input type="email" id="form3Example3c" [(ngModel)]="newUser.email" [ngClass]="{ 'is-valid': email?.valid }" formControlName="email" class="form-control" />
+                              <label class="form-label" for="form3Example3c">Your Email</label>
+                              <div *ngIf="email?.touched && email?.invalid" class="alert alert-danger">
+                                <div *ngIf="email?.errors?.['required']">Enter your email address.</div>
+                                <div *ngIf="email?.errors?.['email']">Please enter valid email</div>
+                            </div>
+                            </div>
+                          </div>
+        
+                          <div class="d-flex flex-row align-items-center mb-4">
+                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                            <div class="form-outline flex-fill mb-0">
+                              <input type="password" id="form3Example4c"  [(ngModel)]="newUser.password" formControlName="password"  class="form-control" />
+                              <label class="form-label" for="form3Example4c">Password</label>
+                              <div *ngIf="password?.touched && password?.invalid" class="alert alert-danger">
+                                <div *ngIf="password?.errors?.['required']">Enter password.</div>
+                                <div *ngIf="password?.errors?.['maxlength']">The Password can't exceed 15 characters.</div>
+                            </div>
+                            </div>
+                          </div>
+        
+                          <!-- <div class="d-flex flex-row align-items-center mb-4">
+                            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                            <div class="form-outline flex-fill mb-0">
+                              <input type="password" id="form3Example4cd" class="form-control" />
+                              <label class="form-label" for="form3Example4cd">Repeat your password</label>
+                            </div>
+                          </div> -->
+        
+                          <!-- <div class="form-check d-flex justify-content-center mb-5">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                            <label class="form-check-label" for="form2Example3">
+                              I agree all statements in <a href="#!">Terms of service</a>
+                            </label>
+                          </div> -->
+        
+                          <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                            <button type="submit" class="btn btn-primary btn-lg" [disabled]="!form.valid">Register</button>
+                          </div>
+                          <h3 class="mb-5 pb-lg-2" style="color: #393f81;">Already have an account? 
+                            <a routerLink="/login" style="color: #393f81;">Sign in</a>
+                            <!-- <a routerLink="/login" class="btn btn-dark btn-lg btn-block" >Sign in here</a> -->
+                        </h3>
+                        </form>
+        
+                      </div>
+                      <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+        
+                        <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                          class="img-fluid" alt="Sample image"> -->
+                          <img src="../assets/images/photo3.jpeg"
+                          class="img-fluid" alt="Sample image">
+        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>

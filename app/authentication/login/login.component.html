@@ -1,0 +1,112 @@
+<!-- <div class="make">
+
+<div class="login">
+   
+<div class="center">
+   
+    <h1>Login</h1>
+
+    <form method="post" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+        <div class="txt_field">
+            <input
+            [(ngModel)]="user.userId" [(ngModel)]="credentials.userId"
+            name="userId"
+            
+            type="text" required  formControlName="userId" id="saveId">
+            <span></span>
+            <label>User Id</label>
+        </div>
+        <div class="txt_field">
+            <input
+            [(ngModel)]="user.password" [(ngModel)]="credentials.password"
+            name="password"
+            type="password" required formControlName="password">
+            <span></span>
+            <label>Password</label>
+        </div>
+        <div class="two">
+            <input type="submit" value="Login">
+            <input type="reset" value="Clear" style="margin-left:10px;">
+        </div>
+        
+        <div class="signup_link">
+          Not a member?  <a routerLink="/register" >SignUp</a>
+        </div>
+    </form>
+    {{credentials | json}}
+   
+</div>
+</div>
+
+</div> -->
+<div class="one">
+<section class="vh-100">
+    <!-- <section class="vh-100" style="background: url(https://www.shutterstock.com/image-photo/cricket-leather-ball-resting-on-bat-1773488369)"> -->
+    
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="row g-0">
+              <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" /> -->
+                  <img src="../assets/images/photo1.jpeg"
+                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+              </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+  
+                    <form method="post"  (ngSubmit)="onSubmit()" [formGroup]="form">
+  
+                    <div class="d-flex align-items-center mb-3 pb-1">
+                      <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                      <span class="h1 fw-bold mb-0">CPlayer</span>
+                    </div>
+  
+                    <h1 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h1>
+  
+                    <div class="form-outline mb-4">
+                      <input type="text" id="form2Example17" [(ngModel)]="user.userId" [(ngModel)]="credentials.userId" [ngClass]="{ 'is-valid': name?.valid }"   id="validationDefault01"  formControlName="name"  class="form-control" placeholder="enter"/>
+                      
+                      <label class="form-label" for="form2Example17">User Id</label>
+                      <div *ngIf="name?.touched && name?.invalid" class="alert alert-danger">
+                        <div *ngIf="name?.errors?.['required']">UserId is required.</div>
+                        <div *ngIf="name?.errors?.['maxlength']">The UserId can't exceed 20 characters.</div>
+                        <div *ngIf="name?.errors?.['minlength']">The userId should be 4 character.</div>
+                    </div>
+                    </div>
+  
+                    <div class="form-outline mb-4">
+                      <input type="password" id="form2Example27"  [(ngModel)]="user.password" [(ngModel)]="credentials.password" [ngClass]="{ 'is-valid?': password?.valid }" formControlName="password" class="form-control "/>
+                     
+                      <label class="form-label" for="form2Example27">Password</label>
+                      <div *ngIf="password?.touched && password?.invalid" class="alert alert-danger">
+                        <div *ngIf="password?.errors?.['required']">Password is required.</div>
+                        <div *ngIf="password?.errors?.['maxlength']">The Password can't exceed 15 characters.</div>
+                    </div>
+                    </div>
+  
+                    <div class="pt-1 mb-4">
+                      <!-- <button class="btn btn-dark btn-lg btn-block" type="submit" (click)="onSubmit()">Login</button> -->
+                      <button class="btn btn-dark btn-lg btn-block" type="submit" [disabled]="!form.valid" >Login</button>
+                    </div>
+  
+                    
+                    <h2 class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? 
+                        <!-- <a href="#!" style="color: #393f81;">Register here</a> -->
+                        <button routerLink="/register" class="btn btn-dark btn-lg btn-block" type="button">Register here</button>
+                    </h2>
+                    <!-- <a href="#!" class="small text-muted">Terms of use.</a> -->
+                    <!-- <a href="#!" class="small text-muted">Privacy policy</a> -->
+                  </form>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

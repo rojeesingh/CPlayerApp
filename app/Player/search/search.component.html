@@ -1,0 +1,61 @@
+
+<div style="padding-left: 37%;margin-top: 15px;">
+<div class="search " >
+
+    <input class="form-control me-2" id="search" type="search" placeholder="Search player" [(ngModel)]=" searchName" aria-label="Search" required>
+   <button class="btn btn-outline" style="background-color:rgb(193, 246, 33);" type="submit" id="searchButton" (click)="onSearching()">Search</button>
+</div>
+</div>
+
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-3 column" *ngFor="let d of Detailes">
+            <div class="card">
+                <div class="card-body">
+                   <mat-card-title>{{d.name}}</mat-card-title>
+                   <h3>{{d.country}}</h3>
+                   <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                  </mat-card-actions>  
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div> -->
+
+<!-- fxLayout="row wrap" fxLayoutGap="16px" -->
+<!-- fxFlex="25%" -->
+<!-- <div class="content">
+    <div class="row" >
+ <div class="col-md-3" *ngFor="let d of Detailes">
+    <mat-card class="example-card">
+        <mat-card-title>{{d.name}}</mat-card-title>
+        <h3>{{d.country}}</h3>
+        <mat-card-title>{{d.country}}</mat-card-title> 
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>  
+      </mat-card>
+</div>
+</div>
+</div>
+ -->
+<div class="container" style="float:none"> 
+  <div class="row">
+    <div class ="col-md-auto " *ngFor="let d of Detailes">
+      <div class="card" style="width: 18rem;height:220px;background-color:linear-gradient(120deg, #2980b9,#8e44ad);border:5px solid rgb(193, 246, 33) ">
+        <div class="card-body">
+        <h2 class="card-subtitle mb-2 ">{{d.name}}</h2>
+        <h3>{{d.country}}</h3>
+        <div class="two">
+          <input type="submit" value="View Details"  (click)="getDetails(d.id)">
+          <input type="submit" value="Add favorite" style="margin-left:10px;"  (click)="addToFavorite(d)">
+      </div>
+    </div>
+  </div>
+</div>
+</div>

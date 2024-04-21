@@ -1,0 +1,32 @@
+#title{
+    color: white;
+    
+}
+#one a{
+    color:white;
+}
+
+#searchButton{
+    color: black;
+    background-color: rgb(193, 246, 33);
+    font-size: larger;
+}
+
+#two{
+    color: black;
+    background-color: rgb(193, 246, 33);
+}
+.login{
+    padding-left: 1%;
+    display: flex;
+}
+#two{
+ 
+}
+.bottom-border{
+    border-bottom: 2px solid  rgb(193, 246, 33);
+}
+
+.router{
+    position: relative;
+}
