@@ -1,0 +1,78 @@
+version: '3'
+services:
+  eurekaserver:
+    image: codekhush/myeurekaserver:v1
+    restart: always
+    network_mode: host
+    ports:
+      - 9003:9003      
+    healthcheck:
+      test: "exit 0"
+      
+  userservice:
+    image: codekhush/myuserservice:v1
+    restart: always
+    network_mode: host
+    depends_on:
+      - eurekaserver
+      - mysql
+    ports:
+      - 7071:7071
+    healthcheck:
+      test: "exit 0"
+      
+  favouriteservice:
+    image: codekhush/myfavouriteservice:v1
+    restart: always
+    network_mode: host
+    depends_on:
+      - eurekaserver
+      - cricmongodb
+      
+    ports:
+      - 7072:7072
+    healthcheck:
+      test: "exit 0"
+      
+  recommendations:
+    image: coekhush/myrecommendations:v1
+    restart: always
+    network_mode: host
+    depends_on:
+      - eureka-service
+      - mysql
+      
+    ports:
+      - 7074:7074
+    healthcheck:
+      test: "exit 0"
+      
+  
+  cplayerui:
+    image: codekhush/mycplayerui:v1
+    network_mode: host
+    container_name: cplayer-ui-cont
+    ports:
+      - 8080:8080 
+    healthcheck:
+      test: "exit 0"
+
+  mysql:
+    image: mysql:latest
+    network_mode: host
+    container_name: mysql_container
+    ports:
+      - 3306:3306    
+    environment:
+      MYSQL_DATABASENAME: userservice
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: bhanu
+      
+  mongo:
+    image: mongo:latest
+    network_mode: host
+    container_name: cricmongodb
+    ports:
+      - 27017:27017
+      
